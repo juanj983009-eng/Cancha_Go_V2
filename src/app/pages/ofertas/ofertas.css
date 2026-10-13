@@ -1,0 +1,27 @@
+.offer-card {
+  padding: 32px;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  background-color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.offer-card h2 {
+  font-size: 1.5rem;
+}
+
+.offer-card p {
+  color: #6c757d;
+  line-height: 1.7;
+}
+
+.price {
+  margin-top: 24px;
+  font-size: 1.7rem;
+  font-weight: 700;
+}

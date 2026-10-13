@@ -1,0 +1,20 @@
+.reservation-card {
+  padding: 40px;
+  border: 1px solid #e9ecef;
+  border-radius: 24px;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.price {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #087f5b;
+}
+
+@media (max-width: 575px) {
+  .reservation-card {
+    padding: 24px;
+  }
+}

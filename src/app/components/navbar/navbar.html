@@ -1,0 +1,91 @@
+<nav class="navbar-cancha">
+
+  <div class="container navbar-container">
+
+    <a
+      class="logo"
+      routerLink="/"
+      (click)="cerrarMenu()"
+    >
+      Cancha Go
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      (click)="cambiarMenu()"
+      [attr.aria-expanded]="menuAbierto"
+      aria-label="Abrir menú de navegación"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div
+      class="nav-menu"
+      [class.menu-abierto]="menuAbierto"
+    >
+
+      <a
+        routerLink="/"
+        routerLinkActive="activo"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="cerrarMenu()"
+      >
+        Inicio
+      </a>
+
+      <a
+        routerLink="/productos"
+        routerLinkActive="activo"
+        (click)="cerrarMenu()"
+      >
+        Productos
+      </a>
+
+      <a
+        routerLink="/ofertas"
+        routerLinkActive="activo"
+        (click)="cerrarMenu()"
+      >
+        Ofertas
+      </a>
+
+      <a
+        routerLink="/tienda"
+        routerLinkActive="activo"
+        (click)="cerrarMenu()"
+      >
+        Tienda
+      </a>
+
+      <a
+        routerLink="/contacto"
+        routerLinkActive="activo"
+        (click)="cerrarMenu()"
+      >
+        Contacto
+      </a>
+
+      <a
+        routerLink="/mi-cuenta"
+        routerLinkActive="activo"
+        (click)="cerrarMenu()"
+      >
+        Mi Cuenta
+      </a>
+
+      @if (autenticado) {
+        <a routerLink="/dashboard" routerLinkActive="activo" (click)="cerrarMenu()">Dashboard</a>
+        <a routerLink="/mis-reservas" routerLinkActive="activo" (click)="cerrarMenu()">Mis reservas</a>
+        <button type="button" class="nav-action" (click)="cerrarSesion()">Cerrar sesión</button>
+      } @else {
+        <a routerLink="/login" routerLinkActive="activo" (click)="cerrarMenu()">Login</a>
+      }
+
+    </div>
+
+  </div>
+
+</nav>

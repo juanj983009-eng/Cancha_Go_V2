@@ -1,59 +1,50 @@
-# CanchaGoPc2
+# Cancha Go PC2
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Aplicación Angular para consultar canchas deportivas y administrar reservas. Fue desarrollada para la PC2 / Semana 8 de JavaScript Avanzado.
 
-## Development server
+## Tecnologías
 
-To start a local development server, run:
+- Angular 22 y TypeScript
+- Bootstrap 5
+- JSON Server para el catálogo REST
+- LocalStorage para sesión y reservas del usuario
+- SSR habilitado; las rutas que usan almacenamiento del navegador se renderizan en cliente
 
-```bash
-ng serve
-```
+## Ejecución local
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Instala las dependencias y levanta los dos procesos en terminales separadas:
 
 ```bash
-ng generate component component-name
+npm install
+npm run api
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La aplicación estará disponible en `http://localhost:4200` y el catálogo REST en `http://localhost:3000/productos`.
+
+## Cuenta de demostración
+
+- Correo: `admin@canchago.com`
+- Contraseña: `123456`
+
+## Flujo de reserva
+
+1. Ve a **Productos**, busca o filtra una cancha y selecciona **Reservar**.
+2. Inicia sesión si aún no la tienes.
+3. Escoge una fecha actual o futura y una hora disponible.
+4. Confirma y consulta o cancela la reserva en **Mis reservas**.
+
+El catálogo se consulta desde JSON Server. Las reservas se guardan en LocalStorage y se asocian al correo del usuario activo; no se simula un backend de reservas.
+
+## Comprobaciones
 
 ```bash
-ng generate --help
+npm test -- --watch=false
+npm run build
 ```
 
-## Building
-
-To build the project run:
+Para servir la salida SSR compilada:
 
 ```bash
-ng build
+npm run serve:ssr:cancha-go-pc2
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

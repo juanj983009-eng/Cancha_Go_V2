@@ -1,0 +1,15 @@
+<section class="container py-5">
+
+  <h1 class="display-5 fw-bold mb-4">
+    Nuestras canchas
+  </h1>
+
+  @if (cargando()) {
+    <div class="alert alert-info" role="status">Cargando canchas...</div>
+  } @else if (error()) {
+    <div class="alert alert-danger">{{ error() }}</div>
+  } @else {
+    <app-product-list [productos]="productos()" />
+  }
+
+</section>

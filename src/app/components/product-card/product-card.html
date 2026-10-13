@@ -1,0 +1,68 @@
+<div class="card h-100">
+
+  <img
+    [src]="producto.imagen"
+    [alt]="producto.nombre"
+    class="card-img-top"
+  >
+
+  <div class="card-body">
+
+    <h3 class="card-title">
+      {{ producto.nombre }}
+    </h3>
+
+    <p class="card-text">
+      Categoría: {{ producto.categoria | uppercase }}
+    </p>
+
+    <p class="card-text">
+      Precio: S/ {{ producto.precio | number:'1.2-2' }}
+    </p>
+
+    <span
+      class="badge"
+      [ngClass]="producto.stock > 0 ? 'bg-success' : 'bg-danger'"
+      [ngStyle]="{
+        'font-size': producto.stock > 0 ? '0.9rem' : '0.85rem'
+      }"
+    >
+      {{ producto.stock > 0 ? 'Disponible' : 'Agotado' }}
+    </span>
+
+    @if (producto.stock > 0) {
+
+      <p class="mt-2">
+        Disponibilidad: {{ producto.stock }}
+      </p>
+
+      <button
+        class="btn btn-primary"
+        (click)="reservar()"
+      >
+        Reservar
+      </button>
+
+    } @else {
+
+      <p
+        class="text-danger mt-2"
+        [ngStyle]="{
+          'font-weight': 'bold'
+        }"
+      >
+        No hay disponibilidad.
+      </p>
+
+      <button
+        class="btn btn-secondary"
+        disabled
+      >
+        No disponible
+      </button>
+
+    }
+
+  </div>
+
+</div>

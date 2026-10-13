@@ -1,0 +1,86 @@
+<section class="container py-5">
+
+  <div class="mb-5">
+
+    <span class="text-success fw-semibold">
+      MIS RESERVAS
+    </span>
+
+    <h1 class="display-5 fw-bold mt-2">
+      Mis reservas
+    </h1>
+
+    <p class="text-secondary">
+      Consulta y administra tus próximas reservas.
+    </p>
+
+  </div>
+
+  @if (reservas.length > 0) {
+
+    <div class="row g-4">
+
+      @for (reserva of reservas; track reserva.id) {
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="reservation-item">
+
+            <h2>
+              {{ reserva.productoNombre }}
+            </h2>
+
+            <p>
+              <strong>Fecha:</strong>
+              {{ reserva.fecha }}
+            </p>
+
+            <p>
+              <strong>Hora:</strong>
+              {{ reserva.hora }}
+            </p>
+
+            <p>
+              <strong>Precio:</strong>
+              S/ {{ reserva.precio | number:'1.2-2' }}
+            </p>
+
+            <button
+              class="btn btn-outline-danger"
+              (click)="eliminarReserva(reserva.id)"
+            >
+              Cancelar reserva
+            </button>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  } @else {
+
+    <div class="empty-state text-center py-5">
+
+      <h2>
+        No tienes reservas todavía.
+      </h2>
+
+      <p class="text-secondary">
+        Encuentra una cancha y realiza tu primera reserva.
+      </p>
+
+      <a
+        routerLink="/productos"
+        class="btn btn-success"
+      >
+        Explorar canchas
+      </a>
+
+    </div>
+
+  }
+
+</section>

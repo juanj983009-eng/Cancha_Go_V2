@@ -1,0 +1,61 @@
+<section class="container py-5">
+
+  <div class="dashboard-header">
+
+    <div>
+
+      <span class="text-success fw-semibold">
+        PANEL DE CONTROL
+      </span>
+
+      <h1 class="fw-bold mt-2">
+        Bienvenido, {{ usuario?.nombre }}
+      </h1>
+
+      <p class="text-secondary">
+        {{ usuario?.correo }}
+      </p>
+
+    </div>
+
+    <button
+      class="btn btn-outline-danger"
+      (click)="cerrarSesion()"
+    >
+      Cerrar sesión
+    </button>
+
+  </div>
+
+  <div class="row g-4 mt-3">
+
+    <div class="col-12 col-md-4">
+
+      <div class="dashboard-card">
+        <span>Reservas</span>
+        <strong>{{ cantidadReservas }}</strong>
+      </div>
+
+    </div>
+
+    <div class="col-12 col-md-4">
+
+      <div class="dashboard-card">
+        <span>Canchas disponibles</span>
+        <strong>6</strong>
+      </div>
+
+    </div>
+
+    <div class="col-12 col-md-4">
+
+      <div class="dashboard-card">
+        <span>Estado</span>
+        <strong>Activo</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

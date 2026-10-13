@@ -1,0 +1,22 @@
+.contact-info {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-info div {
+  padding: 20px;
+  border-left: 4px solid #20c997;
+  background-color: #f8f9fa;
+}
+
+.contact-info p {
+  margin: 5px 0 0;
+  color: #6c757d;
+}
+
+.contact-form {
+  padding: 32px;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  background-color: white;
+}

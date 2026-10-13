@@ -1,0 +1,129 @@
+<section class="container py-5">
+
+  <div class="row g-5">
+
+    <div class="col-12 col-lg-5">
+
+      <span class="text-success fw-semibold">
+        CONTACTO
+      </span>
+
+      <h1 class="display-5 fw-bold mt-2">
+        ¿Tienes alguna consulta?
+      </h1>
+
+      <p class="lead text-secondary">
+        Escríbenos y estaremos encantados de ayudarte
+        con tu próxima reserva.
+      </p>
+
+      <div class="contact-info mt-4">
+
+        <div>
+          <strong>Atención</strong>
+          <p>Lunes a domingo</p>
+        </div>
+
+        <div>
+          <strong>Correo</strong>
+          <p>contacto@canchago.com</p>
+        </div>
+
+        <div>
+          <strong>Teléfono</strong>
+          <p>+51 999 999 999</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-12 col-lg-7">
+
+      <form
+        class="contact-form"
+        (ngSubmit)="enviarFormulario()"
+        #formulario="ngForm"
+      >
+
+        <div class="mb-3">
+
+          <label
+            for="nombre"
+            class="form-label"
+          >
+            Nombre
+          </label>
+
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            class="form-control"
+            [(ngModel)]="nombre"
+            required
+          >
+
+        </div>
+
+        <div class="mb-3">
+
+          <label
+            for="correo"
+            class="form-label"
+          >
+            Correo electrónico
+          </label>
+
+          <input
+            id="correo"
+            name="correo"
+            type="email"
+            class="form-control"
+            [(ngModel)]="correo"
+            required
+          >
+
+        </div>
+
+        <div class="mb-3">
+
+          <label
+            for="mensaje"
+            class="form-label"
+          >
+            Mensaje
+          </label>
+
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            class="form-control"
+            rows="5"
+            [(ngModel)]="mensaje"
+            required
+          ></textarea>
+
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!formulario.valid"
+        >
+          Enviar consulta
+        </button>
+
+        @if (enviado) {
+          <div class="alert alert-success mt-4 mb-0">
+            Gracias, {{ nombre }}. Hemos recibido tu consulta.
+          </div>
+        }
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>

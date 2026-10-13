@@ -1,0 +1,28 @@
+.reservation-item {
+  height: 100%;
+  padding: 28px;
+  border: 1px solid #e9ecef;
+  border-radius: 18px;
+  background-color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reservation-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.reservation-item h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.reservation-item p {
+  color: #6c757d;
+}
+
+.empty-state {
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  background-color: #f8f9fa;
+}
