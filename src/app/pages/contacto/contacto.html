@@ -1,18 +1,18 @@
-<section class="container py-5">
+<section class="container cg-page-section">
 
   <div class="row g-5">
 
     <div class="col-12 col-lg-5">
 
-      <span class="text-success fw-semibold">
+      <span class="cg-eyebrow">
         CONTACTO
       </span>
 
-      <h1 class="display-5 fw-bold mt-2">
+      <h1 class="cg-contact-title">
         ¿Tienes alguna consulta?
       </h1>
 
-      <p class="lead text-secondary">
+      <p class="cg-contact-lead">
         Escríbenos y estaremos encantados de ayudarte
         con tu próxima reserva.
       </p>
@@ -115,7 +115,7 @@
         </button>
 
         @if (enviado) {
-          <div class="alert alert-success mt-4 mb-0">
+          <div class="alert alert-success mt-4 mb-0" role="status" aria-live="polite">
             Gracias, {{ nombre }}. Hemos recibido tu consulta.
           </div>
         }

@@ -1,4 +1,4 @@
-<section class="container py-5">
+<section class="container cg-page-section">
 
   <div class="row justify-content-center">
 
@@ -8,15 +8,15 @@
 
         <div class="text-center mb-4">
 
-          <span class="text-success fw-semibold">
+          <span class="cg-eyebrow">
             CANCHA GO
           </span>
 
-          <h1 class="fw-bold mt-2">
+          <h1 class="login-title">
             Iniciar sesión
           </h1>
 
-          <p class="text-secondary">
+          <p class="login-lead">
             Accede a tu cuenta para gestionar tus reservas.
           </p>
 
@@ -68,7 +68,7 @@
 
           @if (error) {
 
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" role="alert" aria-live="polite">
               {{ error }}
             </div>
 

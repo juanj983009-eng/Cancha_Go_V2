@@ -1,110 +1,36 @@
-<section class="container py-5">
+<section class="container cg-page-section">
+  <header class="cg-page-intro"><span class="cg-eyebrow">Reserva</span><h1>Completa tu reserva</h1><p>Elige la fecha y la hora para asegurar tu próxima cancha.</p></header>
 
-  <div class="row justify-content-center">
+  @if (producto()) {
+    <div class="reservation-layout">
+      <article class="reservation-summary">
+        <div class="reservation-summary__media">
+          @switch (producto()!.categoria) {
+            @case ('Fútbol 5') { <img src="/images/canchas/futbol-5.png" [alt]="producto()!.nombre" width="1536" height="1024" fetchpriority="high"> }
+            @case ('Fútbol 7') { <img src="/images/canchas/futbol-7.png" [alt]="producto()!.nombre" width="1536" height="1024" fetchpriority="high"> }
+            @case ('Fútbol 11') { <img src="/images/canchas/futbol-11.png" [alt]="producto()!.nombre" width="1536" height="1024" fetchpriority="high"> }
+            @case ('Básquet') { <img src="/images/canchas/basquet.png" [alt]="producto()!.nombre" width="1536" height="1024" fetchpriority="high"> }
+            @case ('Vóley') { <img src="/images/canchas/voley.png" [alt]="producto()!.nombre" width="1536" height="1024" fetchpriority="high"> }
+            @default { <img src="/images/canchas/padel.png" [alt]="producto()!.nombre" width="1536" height="1024" fetchpriority="high"> }
+          }
+        </div>
+        <div class="reservation-summary__body"><span class="cg-eyebrow">{{ producto()!.categoria }}</span><h2>{{ producto()!.nombre }}</h2><p>Cancha disponible para tu próximo partido.</p><div class="price">S/ {{ producto()!.precio | number:'1.2-2' }} <small>por hora</small></div></div>
+      </article>
 
-    <div class="col-12 col-lg-8">
-
-      <div class="reservation-card">
-
-        <span class="text-success fw-semibold">
-          RESERVA
-        </span>
-
-        @if (producto()) {
-
-          <h1 class="fw-bold mt-2">
-            {{ producto()!.nombre }}
-          </h1>
-
-          <p class="text-secondary">
-            Categoría: {{ producto()!.categoria }}
-          </p>
-
-          <div class="price">
-            S/ {{ producto()!.precio | number:'1.2-2' }}
-          </div>
-
-          <form
-            class="mt-4"
-            (ngSubmit)="confirmarReserva()"
-          >
-
-            <div class="mb-3">
-
-              <label
-                for="fecha"
-                class="form-label"
-              >
-                Fecha
-              </label>
-
-              <input
-                id="fecha"
-                name="fecha"
-                type="date"
-                class="form-control"
-                [(ngModel)]="fecha"
-                [min]="fechaMinima"
-                required
-              >
-
-            </div>
-
-            <div class="mb-3">
-
-              <label
-                for="hora"
-                class="form-label"
-              >
-                Hora
-              </label>
-
-              <input
-                id="hora"
-                name="hora"
-                type="time"
-                class="form-control"
-                [(ngModel)]="hora"
-                required
-              >
-
-            </div>
-
-            @if (error()) {
-
-              <div class="alert alert-danger">
-                {{ error() }}
-              </div>
-
-            }
-
-            <button
-              type="submit"
-              class="btn btn-success"
-            >
-              Confirmar reserva
-            </button>
-
-          </form>
-
-        } @else if (error()) {
-
-          <div class="alert alert-danger">
-            {{ error() }}
-          </div>
-
-        } @else {
-
-          <p>
-            Cargando cancha...
-          </p>
-
-        }
-
-      </div>
-
+      <section class="reservation-card" aria-labelledby="reservation-form-title">
+        <h2 id="reservation-form-title">Selecciona tu horario</h2>
+        <p>Confirma los datos de tu reserva.</p>
+        <form (ngSubmit)="confirmarReserva()">
+          <div class="mb-3"><label for="fecha" class="form-label">Fecha</label><input id="fecha" name="fecha" type="date" class="form-control" [(ngModel)]="fecha" [min]="fechaMinima" required></div>
+          <div class="mb-3"><label for="hora" class="form-label">Hora</label><input id="hora" name="hora" type="time" class="form-control" [(ngModel)]="hora" required></div>
+          @if (error()) { <div class="alert alert-danger" role="alert" aria-live="polite">{{ error() }}</div> }
+          <button type="submit" class="btn btn-success w-100">Confirmar reserva</button>
+        </form>
+      </section>
     </div>
-
-  </div>
-
+  } @else if (error()) {
+    <div class="alert alert-danger" role="alert" aria-live="polite">{{ error() }}</div>
+  } @else {
+    <div class="reservation-loading" role="status" aria-live="polite">Cargando cancha…</div>
+  }
 </section>

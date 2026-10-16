@@ -1,8 +1,8 @@
 <section>
 
-  <div class="row g-3 mb-4">
+  <div class="catalogue-filters">
 
-    <div class="col-12 col-md-8">
+    <div class="catalogue-filters__search">
 
       <label for="busqueda" class="form-label">
         Buscar cancha
@@ -12,13 +12,13 @@
         id="busqueda"
         type="text"
         class="form-control"
-        placeholder="Buscar por nombre..."
+        placeholder="Buscar por nombre…"
         [(ngModel)]="busqueda"
       >
 
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="catalogue-filters__select">
 
       <label for="categoria" class="form-label">
         Categoría
@@ -51,7 +51,7 @@
     <div class="row g-4">
 
       <div
-        class="col-12 col-md-6 col-lg-4"
+        class="col-12 col-md-6 col-xl-4"
         *ngFor="let producto of productosFiltrados"
       >
 
@@ -65,8 +65,9 @@
 
   } @else {
 
-    <div class="alert alert-warning">
-      No se encontraron canchas.
+    <div class="catalogue-empty" role="status">
+      <strong>No se encontraron canchas.</strong>
+      <span>Prueba con otro nombre o categoría.</span>
     </div>
 
   }

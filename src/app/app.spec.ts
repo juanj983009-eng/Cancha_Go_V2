@@ -23,4 +23,13 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('app-navbar')).toBeTruthy();
   });
+
+  it('provides a skip link to the main content', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector<HTMLAnchorElement>('a.skip-link')?.getAttribute('href'))
+      .toBe('#contenido-principal');
+  });
 });

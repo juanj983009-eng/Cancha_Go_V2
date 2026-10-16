@@ -20,4 +20,24 @@ describe('Home', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('renders the six local sports categories', () => {
+    fixture.detectChanges();
+
+    const categories = Array.from(
+      fixture.nativeElement.querySelectorAll('.home-category')
+    ) as HTMLElement[];
+
+    expect(categories.map((category) => category.textContent?.trim())).toEqual([
+      'Fútbol 5',
+      'Fútbol 7',
+      'Fútbol 11',
+      'Básquet',
+      'Vóley',
+      'Pádel'
+    ]);
+    expect(
+      fixture.nativeElement.querySelectorAll('.home-category img[src^="/images/canchas/"]').length
+    ).toBe(6);
+  });
 });

@@ -20,4 +20,23 @@ describe('Reserva', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('shows the selected court image in the reservation summary', () => {
+    component.producto.set({
+      id: 1,
+      nombre: 'Cancha Fútbol 5',
+      imagen: 'ignored-by-local-visual-mapping',
+      categoria: 'Fútbol 5',
+      precio: 60,
+      stock: 1
+    });
+    fixture.detectChanges();
+
+    const image = fixture.nativeElement.querySelector(
+      '.reservation-summary__media img'
+    ) as HTMLImageElement | null;
+
+    expect(image?.getAttribute('src')).toBe('/images/canchas/futbol-5.png');
+    expect(image?.getAttribute('alt')).toBe('Cancha Fútbol 5');
+  });
 });

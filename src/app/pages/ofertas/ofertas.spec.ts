@@ -20,4 +20,19 @@ describe('Ofertas', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('presents each promotion with a local court image', () => {
+    fixture.detectChanges();
+
+    const images = Array.from(
+      fixture.nativeElement.querySelectorAll('.offer-card img')
+    ) as HTMLImageElement[];
+
+    expect(images).toHaveLength(3);
+    expect(images.map((image) => image.getAttribute('src'))).toEqual([
+      '/images/canchas/futbol-5.png',
+      '/images/canchas/futbol-7.png',
+      '/images/canchas/futbol-11.png'
+    ]);
+  });
 });

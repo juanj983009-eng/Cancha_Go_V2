@@ -1,0 +1,20 @@
+.court-card { height: 100%; overflow: hidden; border: 1px solid var(--cg-line); border-radius: var(--cg-radius); background: var(--cg-surface); box-shadow: 0 4px 14px rgba(6, 27, 47, .05); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.court-card:hover { border-color: #b9cad8; transform: translateY(-4px); box-shadow: var(--cg-shadow-lift); }
+.court-card__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--cg-navy); }
+.court-card__media::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(6, 27, 47, .34)); content: ''; pointer-events: none; }
+.court-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.court-card:hover .court-card__media img { transform: scale(1.035); }
+.court-card__category { position: absolute; z-index: 1; top: .85rem; left: .85rem; padding: .35rem .6rem; border-radius: 999px; background: var(--cg-green); color: #062014; font-size: .72rem; font-weight: 850; }
+.court-card__body { display: grid; min-height: 11.25rem; padding: 1.15rem; gap: 1rem; }
+.court-card h3 { margin: 0; font-size: 1.08rem; font-weight: 800; }
+.court-card__availability { margin: .45rem 0 0; color: var(--cg-danger); font-size: .83rem; font-weight: 700; }
+.court-card__availability.is-available { color: var(--cg-green-dark); }
+.court-card__availability span { color: var(--cg-muted); font-weight: 600; }
+.court-card__footer { display: flex; align-items: end; justify-content: space-between; gap: .75rem; }
+.court-card__price { margin: 0; color: var(--cg-ink); font-size: 1.25rem; font-weight: 850; line-height: 1; font-variant-numeric: tabular-nums; }
+.court-card__price span { font-size: .78rem; }
+.court-card__price small { display: block; margin-top: .35rem; color: var(--cg-muted); font-size: .72rem; font-weight: 650; }
+.court-card .btn { flex: 0 0 auto; min-height: 2.35rem; padding: .45rem .8rem; font-size: .85rem; }
+.court-card--sold-out { background: #fbfcfd; }
+.court-card--sold-out .court-card__media img { filter: saturate(.6); }
+@media (max-width: 575px) { .court-card__body { min-height: auto; } }

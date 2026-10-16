@@ -35,4 +35,5 @@ describe('Navbar', () => {
     expect(fixture.nativeElement.textContent).toContain('Mis reservas');
     expect(fixture.nativeElement.textContent).toContain('Cerrar sesión');
   });
+
 });

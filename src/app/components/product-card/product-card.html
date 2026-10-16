@@ -1,68 +1,32 @@
-<div class="card h-100">
-
-  <img
-    [src]="producto.imagen"
-    [alt]="producto.nombre"
-    class="card-img-top"
-  >
-
-  <div class="card-body">
-
-    <h3 class="card-title">
-      {{ producto.nombre }}
-    </h3>
-
-    <p class="card-text">
-      Categoría: {{ producto.categoria | uppercase }}
-    </p>
-
-    <p class="card-text">
-      Precio: S/ {{ producto.precio | number:'1.2-2' }}
-    </p>
-
-    <span
-      class="badge"
-      [ngClass]="producto.stock > 0 ? 'bg-success' : 'bg-danger'"
-      [ngStyle]="{
-        'font-size': producto.stock > 0 ? '0.9rem' : '0.85rem'
-      }"
-    >
-      {{ producto.stock > 0 ? 'Disponible' : 'Agotado' }}
-    </span>
-
-    @if (producto.stock > 0) {
-
-      <p class="mt-2">
-        Disponibilidad: {{ producto.stock }}
-      </p>
-
-      <button
-        class="btn btn-primary"
-        (click)="reservar()"
-      >
-        Reservar
-      </button>
-
-    } @else {
-
-      <p
-        class="text-danger mt-2"
-        [ngStyle]="{
-          'font-weight': 'bold'
-        }"
-      >
-        No hay disponibilidad.
-      </p>
-
-      <button
-        class="btn btn-secondary"
-        disabled
-      >
-        No disponible
-      </button>
-
+<article class="court-card" [class.court-card--sold-out]="producto.stock === 0">
+  <div class="court-card__media">
+    @switch (producto.categoria) {
+      @case ('Fútbol 5') { <img src="/images/canchas/futbol-5.png" [alt]="producto.nombre" width="1536" height="1024" fetchpriority="high"> }
+      @case ('Fútbol 7') { <img src="/images/canchas/futbol-7.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
+      @case ('Fútbol 11') { <img src="/images/canchas/futbol-11.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
+      @case ('Básquet') { <img src="/images/canchas/basquet.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
+      @case ('Vóley') { <img src="/images/canchas/voley.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
+      @default { <img src="/images/canchas/padel.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
     }
-
+    <span class="court-card__category">{{ producto.categoria }}</span>
   </div>
 
-</div>
+  <div class="court-card__body">
+    <div>
+      <h3>{{ producto.nombre }}</h3>
+      <p class="court-card__availability" [class.is-available]="producto.stock > 0">
+        {{ producto.stock > 0 ? 'Disponible' : 'Agotada' }}
+        @if (producto.stock > 0) { <span>· {{ producto.stock }} espacios</span> }
+      </p>
+    </div>
+
+    <div class="court-card__footer">
+      <p class="court-card__price"><span>S/</span> {{ producto.precio | number:'1.2-2' }} <small>por hora</small></p>
+      @if (producto.stock > 0) {
+        <button class="btn btn-success" type="button" (click)="reservar()">Reservar</button>
+      } @else {
+        <button class="btn btn-secondary" type="button" disabled>No disponible</button>
+      }
+    </div>
+  </div>
+</article>

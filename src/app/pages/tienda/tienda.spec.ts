@@ -18,4 +18,10 @@ describe('Tienda', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('renders the store as an editorial list of four services', () => {
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.querySelectorAll('.store-list .store-card')).toHaveLength(4);
+  });
 });

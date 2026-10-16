@@ -22,4 +22,9 @@ describe('ProductCard', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('uses a local sports image for the product category', () => {
+    const image = fixture.nativeElement.querySelector('img') as HTMLImageElement;
+    expect(image.getAttribute('src')).toBe('/images/canchas/futbol-5.png');
+  });
 });

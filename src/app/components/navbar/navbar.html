@@ -7,7 +7,7 @@
       routerLink="/"
       (click)="cerrarMenu()"
     >
-      Cancha Go
+      <span class="logo-mark" aria-hidden="true">CG</span><span>Cancha Go</span>
     </a>
 
     <button
@@ -15,11 +15,9 @@
       type="button"
       (click)="cambiarMenu()"
       [attr.aria-expanded]="menuAbierto"
-      aria-label="Abrir menú de navegación"
+      aria-label="{{ menuAbierto ? 'Cerrar menú de navegación' : 'Abrir menú de navegación' }}"
     >
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
 
     <div
@@ -27,6 +25,7 @@
       [class.menu-abierto]="menuAbierto"
     >
 
+      <div class="nav-menu__public" aria-label="Navegación principal">
       <a
         routerLink="/"
         routerLinkActive="activo"
@@ -67,7 +66,9 @@
       >
         Contacto
       </a>
+      </div>
 
+      <div class="nav-menu__account" aria-label="Área de usuario">
       <a
         routerLink="/mi-cuenta"
         routerLinkActive="activo"
@@ -83,6 +84,7 @@
       } @else {
         <a routerLink="/login" routerLinkActive="activo" (click)="cerrarMenu()">Login</a>
       }
+      </div>
 
     </div>
 
