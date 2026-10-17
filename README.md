@@ -20,7 +20,11 @@ npm run api
 npm start
 ```
 
-La aplicación estará disponible en `http://localhost:4200` y el catálogo REST en `http://localhost:3000/productos`.
+La aplicación estará disponible en `http://localhost:4200` y JSON Server en `http://localhost:3000/productos`. Durante `npm start`, Angular reenvía `/api/*` a JSON Server; por ello la interfaz y el servicio usan `/api/productos` tanto localmente como en producción.
+
+## Catálogo en Vercel
+
+Vercel publica funciones de solo lectura en `/api/productos` y `/api/productos/:id`. Ambas usan los mismos seis productos de `db.json`; no hay endpoints de escritura ni base de datos adicional. Las rutas Angular permanecen a cargo de SSR, mientras que el directorio `api/` se publica como funciones de Vercel.
 
 ## Cuenta de demostración
 
@@ -40,6 +44,7 @@ El catálogo se consulta desde JSON Server. Las reservas se guardan en LocalStor
 
 ```bash
 npm test -- --watch=false
+npm run test:api
 npm run build
 ```
 

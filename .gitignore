@@ -2,6 +2,14 @@
 
 # Compiled output
 /dist
+/docs/
+/.superpowers/
+/.angular/
+/node_modules/
+/.vercel/
+/.env
+/.env.*
+!.env.example
 /tmp
 /out-tsc
 /bazel-out

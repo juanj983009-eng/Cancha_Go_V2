@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Cancha Fútbol 5 Premium",
-      "imagen": "https://placehold.co/600x400?text=Futbol+5",
+      "imagen": "/images/canchas/futbol-5.png",
       "categoria": "Fútbol 5",
       "precio": 60,
       "stock": 8
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "nombre": "Cancha Fútbol 7 Profesional",
-      "imagen": "https://placehold.co/600x400?text=Futbol+7",
+      "imagen": "/images/canchas/futbol-7.png",
       "categoria": "Fútbol 7",
       "precio": 90,
       "stock": 5
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "nombre": "Cancha Fútbol 11",
-      "imagen": "https://placehold.co/600x400?text=Futbol+11",
+      "imagen": "/images/canchas/futbol-11.png",
       "categoria": "Fútbol 11",
       "precio": 150,
       "stock": 3
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "nombre": "Cancha de Básquet",
-      "imagen": "https://placehold.co/600x400?text=Basquet",
+      "imagen": "/images/canchas/basquet.png",
       "categoria": "Básquet",
       "precio": 70,
       "stock": 6
@@ -35,7 +35,7 @@
     {
       "id": 5,
       "nombre": "Cancha de Vóley",
-      "imagen": "https://placehold.co/600x400?text=Voley",
+      "imagen": "/images/canchas/voley.png",
       "categoria": "Vóley",
       "precio": 65,
       "stock": 0
@@ -43,7 +43,7 @@
     {
       "id": 6,
       "nombre": "Cancha Fútbol 5 Económica",
-      "imagen": "https://placehold.co/600x400?text=Futbol+5+Eco",
+      "imagen": "/images/canchas/futbol-5.png",
       "categoria": "Fútbol 5",
       "precio": 45,
       "stock": 10

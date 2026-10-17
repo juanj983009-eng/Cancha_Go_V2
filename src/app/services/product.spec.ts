@@ -26,9 +26,15 @@ describe('ProductService', () => {
     let result: Product[] = [];
 
     TestBed.inject(ProductService).getProducts().subscribe(data => result = data);
-    const request = httpTesting.expectOne('http://localhost:3000/productos');
+    const request = httpTesting.expectOne('/api/productos');
     request.flush(products);
 
     expect(result).toEqual(products);
+  });
+
+  it('requests one product from the same-origin API', () => {
+    TestBed.inject(ProductService).getProductById('2').subscribe();
+
+    httpTesting.expectOne('/api/productos/2').flush({});
   });
 });
