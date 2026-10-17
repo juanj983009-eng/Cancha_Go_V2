@@ -8,7 +8,7 @@
       @case ('Vóley') { <img src="/images/canchas/voley.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
       @default { <img src="/images/canchas/padel.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
     }
-    <span class="court-card__category">{{ producto.categoria }}</span>
+    <span class="court-card__category">{{ producto.categoria }}{{ producto.categoria === 'Fútbol 5' ? ' · 5 jugadores por equipo' : producto.categoria === 'Fútbol 7' ? ' · 7 jugadores por equipo' : producto.categoria === 'Fútbol 11' ? ' · 11 jugadores por equipo' : '' }}</span>
   </div>
 
   <div class="court-card__body">

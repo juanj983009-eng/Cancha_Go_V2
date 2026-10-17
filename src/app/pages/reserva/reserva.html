@@ -14,7 +14,7 @@
             @default { <img src="/images/canchas/padel.png" [alt]="producto()!.nombre" width="1536" height="1024" fetchpriority="high"> }
           }
         </div>
-        <div class="reservation-summary__body"><span class="cg-eyebrow">{{ producto()!.categoria }}</span><h2>{{ producto()!.nombre }}</h2><div class="price">S/ {{ producto()!.precio | number:'1.2-2' }} <small>por hora</small></div></div>
+        <div class="reservation-summary__body"><span class="cg-eyebrow">{{ producto()!.categoria }}{{ producto()!.categoria === 'Fútbol 5' ? ' · 5 jugadores por equipo' : producto()!.categoria === 'Fútbol 7' ? ' · 7 jugadores por equipo' : producto()!.categoria === 'Fútbol 11' ? ' · 11 jugadores por equipo' : '' }}</span><h2>{{ producto()!.nombre }}</h2><div class="price">S/ {{ producto()!.precio | number:'1.2-2' }} <small>por hora</small></div></div>
       </article>
 
       <section class="reservation-card" aria-labelledby="reservation-form-title">
