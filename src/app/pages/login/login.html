@@ -22,7 +22,7 @@
 
         </div>
 
-        <form (ngSubmit)="iniciarSesion()">
+        <form (ngSubmit)="iniciarSesion()" #loginForm="ngForm">
 
           <div class="mb-3">
 
@@ -39,9 +39,15 @@
               type="email"
               class="form-control"
               [(ngModel)]="correo"
-              placeholder="admin@canchago.com"
+              autocomplete="username"
+              autocapitalize="none"
+              spellcheck="false"
+              #correoControl="ngModel"
+              [attr.aria-invalid]="correoControl.invalid && (correoControl.touched || loginForm.submitted) ? true : null"
+              aria-describedby="login-correo-error"
               required
             >
+            <span id="login-correo-error" class="form-error" aria-live="polite">@if (correoControl.invalid && (correoControl.touched || loginForm.submitted)) { Ingresa tu correo electrónico. }</span>
 
           </div>
 
@@ -60,9 +66,13 @@
               type="password"
               class="form-control"
               [(ngModel)]="password"
-              placeholder="••••••"
+              autocomplete="current-password"
+              #passwordControl="ngModel"
+              [attr.aria-invalid]="passwordControl.invalid && (passwordControl.touched || loginForm.submitted) ? true : null"
+              aria-describedby="login-password-error"
               required
             >
+            <span id="login-password-error" class="form-error" aria-live="polite">@if (passwordControl.invalid && (passwordControl.touched || loginForm.submitted)) { Ingresa tu contraseña. }</span>
 
           </div>
 

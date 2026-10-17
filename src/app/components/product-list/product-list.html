@@ -12,9 +12,12 @@
         id="busqueda"
         type="text"
         class="form-control"
-        placeholder="Buscar por nombre…"
+        name="busqueda"
+        autocomplete="off"
+        aria-describedby="busqueda-ayuda"
         [(ngModel)]="busqueda"
       >
+      <span id="busqueda-ayuda" class="form-help">Busca por el nombre de la cancha.</span>
 
     </div>
 
@@ -26,6 +29,7 @@
 
       <select
         id="categoria"
+        name="categoria"
         class="form-select"
         [(ngModel)]="categoriaSeleccionada"
       >

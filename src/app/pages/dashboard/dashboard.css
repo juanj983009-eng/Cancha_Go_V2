@@ -15,8 +15,12 @@
 }
 .dashboard-header h1 { margin: .55rem 0; color: white; font-size: clamp(2rem, 4vw, 3rem); font-weight: 850; }
 .dashboard-header .cg-eyebrow { color: #bff5d3; }
+.dashboard-header .dashboard-lead { max-width: 38rem; margin-top: .75rem; color: #d9e6e2; }
+.dashboard-header .btn-outline-danger { flex-shrink: 0; border-color: #8da3b5; color: #e5edf3; }
+.dashboard-header .btn-outline-danger:hover { border-color: white; background: white; color: var(--cg-navy); }
 
 .dashboard-card {
+  height: 100%;
   padding: 1.75rem;
   border: 1px solid var(--cg-line);
   border-radius: var(--cg-radius);
@@ -24,7 +28,10 @@
   box-shadow: 0 4px 14px rgba(6, 27, 47, .05);
 }
 .dashboard-summary { margin-top: 1.5rem; }
-.dashboard-card--primary { border-top: 3px solid var(--cg-green); }
+.dashboard-card--primary { border-top: 3px solid var(--cg-green); background: var(--cg-green-pale); }
+.dashboard-card p { margin: .75rem 0 0; color: var(--cg-muted); font-size: .9rem; }
+.dashboard-card.dashboard-card--primary strong { font-size: 3.5rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.dashboard-card .session-status { margin-top: 1.1rem; font-size: 1.5rem; }
 
 .dashboard-card span {
   display: block;

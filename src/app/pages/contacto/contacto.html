@@ -61,8 +61,13 @@
             type="text"
             class="form-control"
             [(ngModel)]="nombre"
+            autocomplete="name"
+            #nombreControl="ngModel"
+            [attr.aria-invalid]="nombreControl.invalid && nombreControl.touched ? true : null"
+            aria-describedby="contacto-nombre-error"
             required
           >
+          <span id="contacto-nombre-error" class="form-error" aria-live="polite">@if (nombreControl.invalid && nombreControl.touched) { Ingresa tu nombre. }</span>
 
         </div>
 
@@ -81,8 +86,15 @@
             type="email"
             class="form-control"
             [(ngModel)]="correo"
+            autocomplete="email"
+            autocapitalize="none"
+            spellcheck="false"
+            #correoControl="ngModel"
+            [attr.aria-invalid]="correoControl.invalid && correoControl.touched ? true : null"
+            aria-describedby="contacto-correo-error"
             required
           >
+          <span id="contacto-correo-error" class="form-error" aria-live="polite">@if (correoControl.invalid && correoControl.touched) { Ingresa tu correo electrónico. }</span>
 
         </div>
 
@@ -101,8 +113,12 @@
             class="form-control"
             rows="5"
             [(ngModel)]="mensaje"
+            #mensajeControl="ngModel"
+            [attr.aria-invalid]="mensajeControl.invalid && mensajeControl.touched ? true : null"
+            aria-describedby="contacto-mensaje-error"
             required
           ></textarea>
+          <span id="contacto-mensaje-error" class="form-error" aria-live="polite">@if (mensajeControl.invalid && mensajeControl.touched) { Escribe tu consulta. }</span>
 
         </div>
 
