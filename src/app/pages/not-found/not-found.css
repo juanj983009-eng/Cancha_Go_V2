@@ -1,0 +1,7 @@
+.not-found { display: grid; place-items: center; min-height: 28rem; text-align: center; }
+.not-found__content { max-width: 35rem; }
+.not-found__court { position: relative; display: grid; place-items: center; width: 12rem; height: 7rem; margin: 0 auto 2rem; border: 2px solid var(--cg-line); border-radius: var(--cg-radius-sm); }
+.not-found__court::before { position: absolute; top: 0; bottom: 0; left: 50%; border-left: 2px solid var(--cg-line); content: ''; }
+.not-found__court span { z-index: 1; padding: 0 .5rem; background: var(--cg-canvas); color: var(--cg-green-dark); font-size: 3.5rem; font-weight: 850; letter-spacing: -.06em; }
+.not-found h1 { margin: .75rem 0; font-size: clamp(2rem, 4vw, 3rem); font-weight: 850; }
+.not-found p { margin: 0 0 1.5rem; color: var(--cg-muted); line-height: 1.7; }

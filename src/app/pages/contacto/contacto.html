@@ -9,32 +9,18 @@
       </span>
 
       <h1 class="cg-contact-title">
-        ¿Tienes alguna consulta?
+        Formulario de contacto
       </h1>
 
       <p class="cg-contact-lead">
-        Escríbenos y estaremos encantados de ayudarte
-        con tu próxima reserva.
+        Completa los campos para probar una consulta.
+        Esta demostración no envía mensajes ni genera solicitudes de atención.
       </p>
 
-      <div class="contact-info mt-4">
-
-        <div>
-          <strong>Atención</strong>
-          <p>Lunes a domingo</p>
-        </div>
-
-        <div>
-          <strong>Correo</strong>
-          <p>contacto@canchago.com</p>
-        </div>
-
-        <div>
-          <strong>Teléfono</strong>
-          <p>+51 999 999 999</p>
-        </div>
-
-      </div>
+      <aside class="contact-info mt-4" aria-labelledby="contact-demo-title">
+        <h2 id="contact-demo-title">Una prueba sin envío</h2>
+        <p>El resultado se muestra únicamente en esta página. No hay un canal de atención conectado.</p>
+      </aside>
 
     </div>
 
@@ -127,12 +113,12 @@
           class="btn btn-success"
           [disabled]="!formulario.valid"
         >
-          Enviar consulta
+          Simular consulta
         </button>
 
         @if (enviado) {
           <div class="alert alert-success mt-4 mb-0" role="status" aria-live="polite">
-            Gracias, {{ nombre }}. Hemos recibido tu consulta.
+            Gracias, {{ nombre }}. La consulta se ha simulado correctamente. No se ha enviado ningún mensaje.
           </div>
         }
 

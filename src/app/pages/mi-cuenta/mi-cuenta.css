@@ -1,3 +1,4 @@
 .account-card { padding: clamp(2rem, 5vw, 3.5rem) clamp(1.4rem, 4vw, 2.5rem); border: 1px solid var(--cg-line); border-radius: var(--cg-radius-lg); background: var(--cg-surface); box-shadow: var(--cg-shadow); }
 .account-title { margin: .7rem 0; color: var(--cg-navy); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 850; }
 .account-lead { max-width: 34rem; margin: 0 auto; color: var(--cg-muted); }
+.account-note { max-width: 32rem; margin: 1.25rem auto 0; padding: 1rem; border-radius: var(--cg-radius-sm); background: var(--cg-green-pale); color: #0f6b39; font-size: .9rem; line-height: 1.6; }

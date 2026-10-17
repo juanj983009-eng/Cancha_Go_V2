@@ -7,11 +7,11 @@
     </span>
 
     <h1>
-      Mis reservas
+      Tus reservas
     </h1>
 
     <p>
-      Consulta y administra tus próximas reservas.
+      Revisa la fecha, la hora y el precio registrado de tus reservas. Desde aquí también puedes cancelarlas.
     </p>
 
   </header>
@@ -25,25 +25,17 @@
         <div class="col-12 col-md-6 col-lg-4">
 
           <article class="reservation-item">
+            <span class="reservation-item__status">Reserva guardada</span>
 
             <h2>
               {{ reserva.productoNombre }}
             </h2>
 
-            <p class="reservation-item__meta">
-              <strong>Fecha:</strong>
-              {{ reserva.fecha }}
-            </p>
-
-            <p class="reservation-item__meta">
-              <strong>Hora:</strong>
-              {{ reserva.hora }}
-            </p>
-
-            <p class="reservation-item__price">
-              <strong>Precio:</strong>
-              S/ {{ reserva.precio | number:'1.2-2' }}
-            </p>
+            <dl class="reservation-item__details">
+              <div><dt>Fecha</dt><dd><time [attr.datetime]="reserva.fecha">{{ reserva.fecha | date:'dd/MM/yyyy' }}</time></dd></div>
+              <div><dt>Hora</dt><dd><time [attr.datetime]="reserva.hora">{{ reserva.hora }}</time></dd></div>
+              <div class="reservation-item__price"><dt>Precio registrado</dt><dd>S/ {{ reserva.precio | number:'1.2-2' }}</dd></div>
+            </dl>
 
             <button
               class="btn btn-outline-danger"
@@ -65,11 +57,12 @@
     <div class="empty-state text-center py-5">
 
       <h2>
-        No tienes reservas todavía.
+        Aún no tienes reservas guardadas
       </h2>
 
       <p class="text-secondary">
-        Encuentra una cancha y realiza tu primera reserva.
+        Explora las canchas, elige una opción disponible y confirma la fecha y la hora.
+        Los datos de tu reserva aparecerán aquí.
       </p>
 
       <a

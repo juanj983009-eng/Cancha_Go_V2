@@ -21,7 +21,7 @@ describe('Ofertas', () => {
     expect(component).toBeTruthy();
   });
 
-  it('presents each promotion with a local court image', () => {
+  it('presents each sports option with a local court image', () => {
     fixture.detectChanges();
 
     const images = Array.from(

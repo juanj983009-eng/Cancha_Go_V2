@@ -13,11 +13,12 @@
   border-radius: 12px;
   background-color: var(--cg-green-pale);
   color: var(--cg-muted);
-  text-align: center;
+  border-left: 3px solid var(--cg-green);
 }
-
-.demo-account div {
-  color: #212529;
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
+.demo-account h2 { margin: 0; color: var(--cg-navy); font-size: 1rem; font-weight: 800; }
+.demo-account p, .demo-account small { margin: .5rem 0 0; font-size: .85rem; line-height: 1.5; }
+.demo-account dl { display: grid; gap: .85rem; margin: 1rem 0; }
+.demo-account dt { color: var(--cg-ink); font-size: .8rem; }
+.demo-account dd { margin: .2rem 0 0; }
+.demo-account code { color: var(--cg-navy); font-size: .9rem; overflow-wrap: anywhere; }
+.demo-account small { display: block; }
