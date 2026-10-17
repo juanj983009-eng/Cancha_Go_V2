@@ -30,7 +30,7 @@ describe('Home', () => {
     ) as HTMLElement[];
 
     const catalogueCategories = [...new Set(database.productos.map(product => product.categoria))];
-    expect(categories.map((category) => category.textContent?.split(' · ')[0].trim())).toEqual(catalogueCategories);
+    expect(categories.map((category) => (category.querySelector('strong') ?? category).textContent?.trim())).toEqual(catalogueCategories);
     expect(
       fixture.nativeElement.querySelectorAll('.home-category img[src^="/images/canchas/"]').length
     ).toBe(catalogueCategories.length);

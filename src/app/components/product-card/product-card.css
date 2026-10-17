@@ -7,6 +7,8 @@
 .court-card__category { position: absolute; z-index: 1; top: .85rem; left: .85rem; padding: .35rem .6rem; border-radius: 999px; background: var(--cg-green); color: #062014; font-size: .72rem; font-weight: 850; }
 .court-card__body { display: grid; min-height: 11.25rem; padding: 1.15rem; gap: 1rem; }
 .court-card h2 { margin: 0; font-size: 1.08rem; font-weight: 800; line-height: 1.35; }
+.court-card__category { text-transform: uppercase; }
+.court-card__team-size { margin: .35rem 0 0; color: var(--cg-muted); font-size: .83rem; font-weight: 500; line-height: 1.5; }
 .court-card__availability { margin: .45rem 0 0; color: var(--cg-danger); font-size: .83rem; font-weight: 700; }
 .court-card__availability.is-available { color: var(--cg-green-dark); }
 .court-card__availability span { color: var(--cg-muted); font-weight: 600; }

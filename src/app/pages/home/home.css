@@ -24,6 +24,8 @@
 .home-category img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
 .home-category:hover img { transform: scale(1.045); }
 .home-category span { position: absolute; z-index: 1; right: .9rem; bottom: .85rem; left: .9rem; font-size: 1rem; font-weight: 850; line-height: 1.15; }
+.home-category strong { display: inline-block; padding: .3rem .5rem; background: var(--cg-green); color: #062014; font-size: .72rem; font-weight: 850; text-transform: uppercase; }
+.home-category small { display: block; margin-top: .45rem; color: #e2edea; font-size: .78rem; font-weight: 500; line-height: 1.4; }
 .home-how-it-works { padding-top: clamp(1rem, 3vw, 3rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
 .feature-card { height: 100%; padding: 2rem; border: 1px solid var(--cg-line); border-radius: 0; background-color: white; transition: transform .2s ease, box-shadow .2s ease; }
 .feature-card:hover { transform: translateY(-4px); box-shadow: 0 .75rem 1.9rem rgba(4, 22, 39, .08); }

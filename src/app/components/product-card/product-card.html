@@ -8,12 +8,17 @@
       @case ('Vóley') { <img src="/images/canchas/voley.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
       @default { <img src="/images/canchas/padel.png" [alt]="producto.nombre" width="1536" height="1024" loading="lazy"> }
     }
-    <span class="court-card__category">{{ producto.categoria }}{{ producto.categoria === 'Fútbol 5' ? ' · 5 jugadores por equipo' : producto.categoria === 'Fútbol 7' ? ' · 7 jugadores por equipo' : producto.categoria === 'Fútbol 11' ? ' · 11 jugadores por equipo' : '' }}</span>
+    <span class="court-card__category">{{ producto.categoria }}</span>
   </div>
 
   <div class="court-card__body">
     <div>
       <h2>{{ producto.nombre }}</h2>
+      @switch (producto.categoria) {
+        @case ('Fútbol 5') { <p class="court-card__team-size">5 jugadores por equipo</p> }
+        @case ('Fútbol 7') { <p class="court-card__team-size">7 jugadores por equipo</p> }
+        @case ('Fútbol 11') { <p class="court-card__team-size">11 jugadores por equipo</p> }
+      }
       <p class="court-card__availability" [class.is-available]="producto.stock > 0">
         {{ producto.stock > 0 ? 'Disponible' : 'Agotada' }}
         @if (producto.stock > 0) { <span>· {{ producto.stock }} espacios</span> }
