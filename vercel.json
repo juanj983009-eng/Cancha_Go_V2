@@ -5,6 +5,7 @@
   "outputDirectory": "dist/cancha-go-pc2/browser",
   "routes": [
     { "handle": "filesystem" },
+    { "src": "/api/productos/([^/]+)", "dest": "/api/productos/[id]?id=$1" },
     { "src": "/api(?:/.*)?", "status": 404 },
     { "src": "/images(?:/.*)?", "status": 404 },
     { "src": "/.*\\.[^/]+$", "status": 404 },
