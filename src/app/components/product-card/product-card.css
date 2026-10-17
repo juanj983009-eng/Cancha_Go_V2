@@ -6,7 +6,7 @@
 .court-card:hover .court-card__media img { transform: scale(1.035); }
 .court-card__category { position: absolute; z-index: 1; top: .85rem; left: .85rem; padding: .35rem .6rem; border-radius: 999px; background: var(--cg-green); color: #062014; font-size: .72rem; font-weight: 850; }
 .court-card__body { display: grid; min-height: 11.25rem; padding: 1.15rem; gap: 1rem; }
-.court-card h3 { margin: 0; font-size: 1.08rem; font-weight: 800; }
+.court-card h2 { margin: 0; font-size: 1.08rem; font-weight: 800; line-height: 1.35; }
 .court-card__availability { margin: .45rem 0 0; color: var(--cg-danger); font-size: .83rem; font-weight: 700; }
 .court-card__availability.is-available { color: var(--cg-green-dark); }
 .court-card__availability span { color: var(--cg-muted); font-weight: 600; }
@@ -14,7 +14,7 @@
 .court-card__price { margin: 0; color: var(--cg-ink); font-size: 1.25rem; font-weight: 850; line-height: 1; font-variant-numeric: tabular-nums; }
 .court-card__price span { font-size: .78rem; }
 .court-card__price small { display: block; margin-top: .35rem; color: var(--cg-muted); font-size: .72rem; font-weight: 650; }
-.court-card .btn { flex: 0 0 auto; min-height: 2.35rem; padding: .45rem .8rem; font-size: .85rem; }
+.court-card .btn { flex: 0 0 auto; min-height: 2.75rem; min-width: 6.25rem; padding: .55rem .9rem; font-size: .9rem; }
 .court-card--sold-out { background: #fbfcfd; }
 .court-card--sold-out .court-card__media img { filter: saturate(.6); }
 @media (max-width: 575px) { .court-card__body { min-height: auto; } }

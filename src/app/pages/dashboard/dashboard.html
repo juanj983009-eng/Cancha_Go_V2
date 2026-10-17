@@ -15,6 +15,7 @@
       <p>
         {{ usuario?.correo }}
       </p>
+      <p class="dashboard-lead">Consulta el resumen de tus reservas y continúa organizando tu próximo partido.</p>
 
     </div>
 
@@ -28,13 +29,14 @@
   </div>
 
   <section class="dashboard-summary" aria-label="Resumen de tu actividad">
-  <div class="row g-4 mt-3">
+  <div class="row g-4">
 
     <div class="col-12 col-md-4">
 
       <div class="dashboard-card dashboard-card--primary">
-        <span>Reservas</span>
+        <span>Tus reservas</span>
         <strong>{{ cantidadReservas }}</strong>
+        <p>Reservas guardadas en tu cuenta.</p>
       </div>
 
     </div>
@@ -42,8 +44,9 @@
     <div class="col-12 col-md-4">
 
       <div class="dashboard-card">
-        <span>Canchas disponibles</span>
+        <span>Canchas en catálogo</span>
         <strong>6</strong>
+        <p>Revisa la disponibilidad de cada cancha en el catálogo.</p>
       </div>
 
     </div>
@@ -51,8 +54,9 @@
     <div class="col-12 col-md-4">
 
       <div class="dashboard-card">
-        <span>Estado</span>
-        <strong>Activo</strong>
+        <span>Estado de la sesión</span>
+        <strong class="session-status">Sesión activa</strong>
+        <p>Has iniciado sesión en Cancha Go.</p>
       </div>
 
     </div>

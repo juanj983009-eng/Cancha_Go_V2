@@ -1,4 +1,4 @@
-.catalogue-filters { display: grid; grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr); gap: 1rem; margin-bottom: 2rem; padding: 1rem; border: 1px solid var(--cg-line); border-radius: var(--cg-radius); background: white; box-shadow: 0 4px 14px rgba(6, 27, 47, .04); }
+.catalogue-filters { display: grid; grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr); align-items: start; gap: 1rem; margin-bottom: 2rem; padding: 1.25rem; border: 1px solid var(--cg-line); border-radius: var(--cg-radius); background: white; box-shadow: 0 4px 14px rgba(6, 27, 47, .04); }
 .catalogue-filters__search, .catalogue-filters__select { min-width: 0; }
 .catalogue-filters .form-label { margin-bottom: .45rem; font-size: .84rem; }
 .catalogue-empty { display: grid; gap: .35rem; place-items: center; min-height: 15rem; border: 1px dashed #b6c7d5; border-radius: var(--cg-radius); background: white; color: var(--cg-muted); text-align: center; }

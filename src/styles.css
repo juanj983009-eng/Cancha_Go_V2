@@ -100,7 +100,12 @@ img { display: block; max-width: 100%; }
 
 textarea.form-control { min-height: 8rem; resize: vertical; }
 .form-control::placeholder { color: #8997a8; opacity: 1; }
-.form-control:invalid:not(:placeholder-shown), .form-select:invalid:not(:placeholder-shown) { border-color: #d9757a; }
+.form-control.ng-invalid.ng-touched, .form-select.ng-invalid.ng-touched,
+form.ng-submitted .form-control.ng-invalid, form.ng-submitted .form-select.ng-invalid,
+.form-control:user-invalid, .form-select:user-invalid { border-color: #b3343c; }
+.form-error { display: block; margin-top: .4rem; color: #942931; font-size: .85rem; }
+.form-error:empty { display: none; }
+.form-help { display: block; margin-top: .45rem; color: var(--cg-muted); font-size: .85rem; line-height: 1.5; }
 
 .form-control:focus, .form-select:focus {
   border-color: var(--cg-green);

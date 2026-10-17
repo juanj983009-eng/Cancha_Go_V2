@@ -17,12 +17,12 @@
           </h1>
 
           <p class="login-lead">
-            Accede a tu cuenta para gestionar tus reservas.
+            Accede con la cuenta de demostración para reservar canchas y consultar tus reservas.
           </p>
 
         </div>
 
-        <form (ngSubmit)="iniciarSesion()">
+        <form (ngSubmit)="iniciarSesion()" #loginForm="ngForm">
 
           <div class="mb-3">
 
@@ -39,9 +39,15 @@
               type="email"
               class="form-control"
               [(ngModel)]="correo"
-              placeholder="admin@canchago.com"
+              autocomplete="username"
+              autocapitalize="none"
+              spellcheck="false"
+              #correoControl="ngModel"
+              [attr.aria-invalid]="correoControl.invalid && (correoControl.touched || loginForm.submitted) ? true : null"
+              aria-describedby="login-correo-error"
               required
             >
+            <span id="login-correo-error" class="form-error" aria-live="polite">@if (correoControl.invalid && (correoControl.touched || loginForm.submitted)) { Ingresa tu correo electrónico. }</span>
 
           </div>
 
@@ -60,9 +66,13 @@
               type="password"
               class="form-control"
               [(ngModel)]="password"
-              placeholder="••••••"
+              autocomplete="current-password"
+              #passwordControl="ngModel"
+              [attr.aria-invalid]="passwordControl.invalid && (passwordControl.touched || loginForm.submitted) ? true : null"
+              aria-describedby="login-password-error"
               required
             >
+            <span id="login-password-error" class="form-error" aria-live="polite">@if (passwordControl.invalid && (passwordControl.touched || loginForm.submitted)) { Ingresa tu contraseña. }</span>
 
           </div>
 
@@ -83,21 +93,15 @@
 
         </form>
 
-        <div class="demo-account mt-4">
-
-          <small>
-            Cuenta de demostración
-          </small>
-
-          <div>
-            admin@canchago.com
-          </div>
-
-          <div>
-            Contraseña: 123456
-          </div>
-
-        </div>
+        <aside class="demo-account mt-4" aria-labelledby="demo-account-title">
+          <h2 id="demo-account-title">Credenciales de demostración</h2>
+          <p>Utiliza estos datos en el formulario para probar el acceso.</p>
+          <dl>
+            <div><dt>Correo electrónico</dt><dd><code>admin@canchago.com</code></dd></div>
+            <div><dt>Contraseña</dt><dd><code>123456</code></dd></div>
+          </dl>
+          <small>Autenticación simulada para este proyecto académico.</small>
+        </aside>
 
       </div>
 

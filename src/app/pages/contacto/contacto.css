@@ -1,12 +1,11 @@
 .cg-contact-title { margin: .55rem 0 .65rem; color: var(--cg-navy); font-size: clamp(2.25rem, 5vw, 4rem); font-weight: 850; }
 .cg-contact-lead { max-width: 34rem; color: var(--cg-muted); font-size: 1.08rem; }
-.contact-info { display: grid; gap: 1rem; }
-
-.contact-info div {
+.contact-info {
   padding: 1.15rem 1.25rem;
   border-left: 3px solid var(--cg-green);
   background: var(--cg-surface);
 }
+.contact-info h2 { margin: 0; color: var(--cg-navy); font-size: 1.1rem; font-weight: 800; }
 
 .contact-info p {
   margin: 5px 0 0;
@@ -20,3 +19,4 @@
   background: var(--cg-surface);
   box-shadow: var(--cg-shadow);
 }
+@media (max-width: 575px) { .row { --bs-gutter-x: 1.5rem; } }

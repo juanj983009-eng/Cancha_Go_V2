@@ -1,4 +1,4 @@
-<nav class="navbar-cancha">
+<nav class="navbar-cancha" aria-label="Navegación de Cancha Go">
 
   <div class="container navbar-container">
 
@@ -15,20 +15,23 @@
       type="button"
       (click)="cambiarMenu()"
       [attr.aria-expanded]="menuAbierto"
+      aria-controls="cancha-go-menu"
       aria-label="{{ menuAbierto ? 'Cerrar menú de navegación' : 'Abrir menú de navegación' }}"
     >
-      <span></span><span></span><span></span>
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
     </button>
 
     <div
       class="nav-menu"
+      id="cancha-go-menu"
       [class.menu-abierto]="menuAbierto"
     >
 
-      <div class="nav-menu__public" aria-label="Navegación principal">
+      <div class="nav-menu__public" role="group" aria-label="Navegación pública">
       <a
         routerLink="/"
         routerLinkActive="activo"
+        ariaCurrentWhenActive="page"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="cerrarMenu()"
       >
@@ -38,14 +41,16 @@
       <a
         routerLink="/productos"
         routerLinkActive="activo"
+        ariaCurrentWhenActive="page"
         (click)="cerrarMenu()"
       >
-        Productos
+        Canchas
       </a>
 
       <a
         routerLink="/ofertas"
         routerLinkActive="activo"
+        ariaCurrentWhenActive="page"
         (click)="cerrarMenu()"
       >
         Ofertas
@@ -54,6 +59,7 @@
       <a
         routerLink="/tienda"
         routerLinkActive="activo"
+        ariaCurrentWhenActive="page"
         (click)="cerrarMenu()"
       >
         Tienda
@@ -62,27 +68,30 @@
       <a
         routerLink="/contacto"
         routerLinkActive="activo"
+        ariaCurrentWhenActive="page"
         (click)="cerrarMenu()"
       >
         Contacto
       </a>
       </div>
 
-      <div class="nav-menu__account" aria-label="Área de usuario">
+      <div class="nav-menu__account" role="group" aria-label="Área de usuario">
+      <span class="nav-menu__label">Tu espacio</span>
       <a
         routerLink="/mi-cuenta"
         routerLinkActive="activo"
+        ariaCurrentWhenActive="page"
         (click)="cerrarMenu()"
       >
-        Mi Cuenta
+        Mi cuenta
       </a>
 
       @if (autenticado) {
-        <a routerLink="/dashboard" routerLinkActive="activo" (click)="cerrarMenu()">Dashboard</a>
-        <a routerLink="/mis-reservas" routerLinkActive="activo" (click)="cerrarMenu()">Mis reservas</a>
+        <a routerLink="/dashboard" routerLinkActive="activo" ariaCurrentWhenActive="page" (click)="cerrarMenu()">Mi panel</a>
+        <a routerLink="/mis-reservas" routerLinkActive="activo" ariaCurrentWhenActive="page" (click)="cerrarMenu()">Mis reservas</a>
         <button type="button" class="nav-action" (click)="cerrarSesion()">Cerrar sesión</button>
       } @else {
-        <a routerLink="/login" routerLinkActive="activo" (click)="cerrarMenu()">Login</a>
+        <a routerLink="/login" routerLinkActive="activo" ariaCurrentWhenActive="page" (click)="cerrarMenu()">Iniciar sesión</a>
       }
       </div>
 
