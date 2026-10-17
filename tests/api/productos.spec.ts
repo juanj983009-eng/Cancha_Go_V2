@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import productHandler from './[id]';
-import productsHandler from './index';
+import productHandler from '../../api/productos/[id].js';
+import productsHandler from '../../api/productos/index.js';
+import database from '../../db.json';
 
 function responseRecorder() {
   let body = '';
@@ -23,6 +24,7 @@ describe('Vercel products API', () => {
 
     expect(recorder.response.statusCode).toBe(200);
     expect(JSON.parse(recorder.body())).toHaveLength(6);
+    expect(JSON.parse(recorder.body())).toEqual(database.productos);
     expect(recorder.headers.get('Content-Type')).toBe('application/json; charset=utf-8');
   });
 

@@ -8,7 +8,7 @@ Aplicación Angular para consultar canchas deportivas y administrar reservas. Fu
 - Bootstrap 5
 - JSON Server para el catálogo REST
 - LocalStorage para sesión y reservas del usuario
-- SSR habilitado; las rutas que usan almacenamiento del navegador se renderizan en cliente
+- SPA estática con Angular Router; no requiere servidor SSR
 
 ## Ejecución local
 
@@ -24,7 +24,9 @@ La aplicación estará disponible en `http://localhost:4200` y JSON Server en `h
 
 ## Catálogo en Vercel
 
-Vercel publica funciones de solo lectura en `/api/productos` y `/api/productos/:id`. Ambas usan los mismos seis productos de `db.json`; no hay endpoints de escritura ni base de datos adicional. Las rutas Angular permanecen a cargo de SSR, mientras que el directorio `api/` se publica como funciones de Vercel.
+Vercel publica funciones Node.js CommonJS de solo lectura en `/api/productos` y `/api/productos/:id`. Ambas usan los mismos seis productos de `db.json`; no hay endpoints de escritura ni base de datos adicional. Las pruebas viven fuera de `api/` para evitar publicarlas como funciones.
+
+`vercel.json` configura `npm run build` y el directorio de salida `dist/cancha-go-pc2/browser`. Angular genera `index.html` con `outputMode: "static"`, sin entradas de servidor ni hidratación. El fallback de SPA conserva la URL solicitada y permite entrar directamente o recargar las rutas de Angular. Excluye expresamente `/api`, `/images` y las rutas de archivos con extensión (JS, CSS, favicon y demás assets). Las rutas desconocidas sin extensión muestran la página 404 de Angular.
 
 ## Cuenta de demostración
 
@@ -48,8 +50,4 @@ npm run test:api
 npm run build
 ```
 
-Para servir la salida SSR compilada:
-
-```bash
-npm run serve:ssr:cancha-go-pc2
-```
+El build genera una SPA en `dist/cancha-go-pc2/browser/index.html`. En desarrollo, utiliza `npm start` junto con `npm run api` para probar el catálogo y las reservas con el proxy local.

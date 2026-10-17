@@ -8,8 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:api": "vitest run api/productos/api.spec.ts",
-    "serve:ssr:cancha-go-pc2": "node dist/cancha-go-pc2/server/server.mjs"
+    "test:api": "vitest run tests/api/productos.spec.ts"
   },
   "private": true,
   "packageManager": "npm@11.12.1",

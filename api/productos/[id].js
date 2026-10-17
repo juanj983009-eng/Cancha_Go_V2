@@ -1,10 +1,6 @@
-import type { IncomingMessage, ServerResponse } from 'node:http';
+const { methodNotAllowed, products, sendJson } = require('../_products.cjs');
 
-import { methodNotAllowed, products, sendJson } from '../_products';
-
-type VercelRequest = IncomingMessage & { query?: { id?: string | string[] } };
-
-export default function handler(request: VercelRequest, response: ServerResponse): void {
+module.exports = function handler(request, response) {
   if (request.method !== 'GET') {
     methodNotAllowed(response);
     return;
@@ -20,4 +16,4 @@ export default function handler(request: VercelRequest, response: ServerResponse
   }
 
   sendJson(response, 200, product);
-}
+};
