@@ -3,10 +3,11 @@
   "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "dist/cancha-go-pc2/browser",
-  "rewrites": [
-    {
-      "source": "/((?!api(?:/|$)|images(?:/|$)|.*\\.[^/]+$).*)",
-      "destination": "/index.html"
-    }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api(?:/.*)?", "status": 404 },
+    { "src": "/images(?:/.*)?", "status": 404 },
+    { "src": "/.*\\.[^/]+$", "status": 404 },
+    { "src": "/.*", "dest": "/index.html" }
   ]
 }
